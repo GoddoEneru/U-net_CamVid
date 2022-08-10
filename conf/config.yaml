@@ -1,0 +1,23 @@
+params:
+  num_classes: 32
+  lr: 1e-2
+  epoch: 3
+  batch_size: 4
+  early_stop:
+    mode: min
+    patience: 3
+    delta: 0.05
+    metric: val_loss
+    verbose: True
+system:
+  gpu: 1
+  workers: 3 #modifier
+  parallel: ''
+dataset:
+  train: ${hydra:runtime.cwd}/CamVid/train/
+  train_mask: ${hydra:runtime.cwd}/CamVid/train_labels/
+  val: ${hydra:runtime.cwd}/CamVid/val/
+  val_mask: ${hydra:runtime.cwd}/CamVid/val_labels/
+  test: ${hydra:runtime.cwd}/CamVid/test/
+  test_mask: ${hydra:runtime.cwd}/CamVid/test_labels/
+  classes: ${hydra:runtime.cwd}/CamVid/class_dict.csv
