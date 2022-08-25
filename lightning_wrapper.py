@@ -8,6 +8,7 @@ from model import NeuralNetwork
 class LightningWrapper(pl.LightningModule):
     def __init__(self, num_classes, learning_rate):
         super().__init__()
+        self.save_hyperparameters()
         self.model = NeuralNetwork(num_classes)
         self.learning_rate = learning_rate
 

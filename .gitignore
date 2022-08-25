@@ -4,3 +4,6 @@ lightning_logs
 img
 CamVid
 __pycache__
+wandb
+test_wandb
+.env

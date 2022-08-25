@@ -3,10 +3,9 @@ import pytorch_lightning as pl
 # from utils import show_img
 
 
-def test(cfg, lt_wrapper, camvid):
+def test(cfg, lt_wrapper, trainer, camvid):
     # device = "cuda" if torch.cuda.is_available() else "cpu"
 
-    trainer = pl.Trainer()
     trainer.test(lt_wrapper, camvid)
     print("Testing Done!")
 
